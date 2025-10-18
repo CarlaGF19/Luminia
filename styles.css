@@ -1,0 +1,490 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: #0D0B20;
+    position: relative;
+}
+
+/* Cosmic Background */
+.cosmic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, #8B5CF6 0%, #3B82F6 35%, #0D0B20 70%);
+}
+
+.aurora {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(139, 92, 246, 0.3) 25%, 
+        rgba(59, 130, 246, 0.4) 50%, 
+        rgba(16, 185, 129, 0.3) 75%, 
+        transparent 100%);
+    animation: aurora-flow 8s ease-in-out infinite alternate;
+    filter: blur(2px);
+}
+
+@keyframes aurora-flow {
+    0% { transform: translateX(-10%) skewX(-5deg); opacity: 0.6; }
+    100% { transform: translateX(10%) skewX(5deg); opacity: 0.9; }
+}
+
+.mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, 
+        rgba(13, 11, 32, 0.8) 0%, 
+        rgba(59, 130, 246, 0.1) 50%, 
+        transparent 100%);
+    clip-path: polygon(0 100%, 15% 60%, 25% 70%, 35% 45%, 50% 55%, 65% 35%, 80% 50%, 95% 40%, 100% 100%);
+}
+
+.fog-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        transparent 100%);
+    animation: fog-drift 12s ease-in-out infinite alternate;
+}
+
+@keyframes fog-drift {
+    0% { transform: translateX(-2%); }
+    100% { transform: translateX(2%); }
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 60px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.game-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 
+                 0 0 60px rgba(139, 92, 246, 0.6);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    animation: title-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes title-glow {
+    0% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(139, 92, 246, 0.6); }
+    100% { text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(139, 92, 246, 0.8); }
+}
+
+.game-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #E0E7FF;
+    text-shadow: 0 0 20px rgba(224, 231, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+/* Cards Section */
+.cards-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Guardian Cards */
+.guardian-card {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+}
+
+.guardian-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.3), 
+        rgba(139, 92, 246, 0.6), 
+        rgba(59, 130, 246, 0.6), 
+        rgba(255, 255, 255, 0.3));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: holographic-border 4s linear infinite;
+}
+
+@keyframes holographic-border {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(40px);
+    transition: all 0.4s ease;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.guardian-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    animation: icon-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes icon-float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+.guardian-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.guardian-type {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #E0E7FF;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.activate-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.activate-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Individual Card Styles */
+.inti-card .card-glow {
+    background: radial-gradient(circle, #FACC15, #F59E0B);
+}
+
+.inti-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(250, 204, 21, 0.4);
+}
+
+.wayra-card .card-glow {
+    background: radial-gradient(circle, #3B82F6, #06B6D4);
+}
+
+.wayra-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
+}
+
+.tierra-card .card-glow {
+    background: radial-gradient(circle, #10B981, #059669);
+}
+
+.tierra-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(16, 185, 129, 0.4);
+}
+
+.kallpuna-card .card-glow {
+    background: radial-gradient(circle, #8B5CF6, #F472B6);
+}
+
+.kallpuna-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.4);
+}
+
+/* Progress Section */
+.progress-section {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 25px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E0E7FF;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(224, 231, 255, 0.5);
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 67%;
+    background: linear-gradient(90deg, #10B981, #3B82F6, #8B5CF6);
+    border-radius: 6px;
+    animation: progress-glow 2s ease-in-out infinite alternate;
+}
+
+.progress-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 6px;
+    animation: progress-light-move 3s linear infinite;
+}
+
+@keyframes progress-glow {
+    0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); }
+    100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.8); }
+}
+
+@keyframes progress-light-move {
+    0% { transform: translateX(-20px); }
+    100% { transform: translateX(calc(67vw - 100px)); }
+}
+
+.progress-percentage {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Floating Particles */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+    border-radius: 50%;
+    animation: particle-float 8s linear infinite;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+}
+
+.particle:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.particle:nth-child(4) {
+    left: 40%;
+    animation-delay: 3s;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(5) {
+    left: 60%;
+    animation-delay: 1.5s;
+    animation-duration: 11s;
+}
+
+.particle:nth-child(6) {
+    left: 70%;
+    animation-delay: 2.5s;
+    animation-duration: 6s;
+}
+
+.particle:nth-child(7) {
+    left: 80%;
+    animation-delay: 4s;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(8) {
+    left: 90%;
+    animation-delay: 0.5s;
+    animation-duration: 12s;
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) translateX(0px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design for 1920x1080 */
+@media (min-width: 1920px) {
+    .main-container {
+        padding: 80px 120px;
+    }
+    
+    .game-title {
+        font-size: 5rem;
+    }
+    
+    .guardian-card {
+        width: 320px;
+        height: 450px;
+    }
+    
+    .cards-section {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .guardian-card {
+        width: 240px;
+        height: 360px;
+    }
+    
+    .cards-section {
+        gap: 30px;
+    }
+    
+    .game-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Glass Floor Reflection Effect */
+.cards-section::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        transparent 100%);
+    transform: scaleY(-1);
+    opacity: 0.3;
+    pointer-events: none;
+}
