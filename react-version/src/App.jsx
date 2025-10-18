@@ -7,6 +7,7 @@ import WayraLevel from './pages/WayraLevel';
 import TierraVivaLevel from './pages/TierraVivaLevel';
 import KallpunaLevel from './pages/KallpunaLevel';
 import CollectionPage from './pages/CollectionPage';
+import SupervisorPage from './pages/SupervisorPage';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/nivel/tierra-viva" element={<TierraVivaLevel />} />
         <Route path="/nivel/kallpuna" element={<KallpunaLevel />} />
         <Route path="/coleccion" element={<CollectionPage />} />
+        <Route path="/supervisor" element={<SupervisorPage />} />
       </Routes>
     </Router>
   );

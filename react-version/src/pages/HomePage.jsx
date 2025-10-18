@@ -227,6 +227,24 @@ const HomePage = () => {
           <Trophy size={20} />
           <span className="font-medium">Logros</span>
         </motion.button>
+
+        {/* Botón de Tutor */}
+        <motion.button
+          onClick={() => navigate('/supervisor')}
+          className="flex items-center gap-2 px-4 py-2 
+                     bg-gradient-to-r from-cyan-400/20 to-blue-500/20 backdrop-blur-md 
+                     rounded-full border border-cyan-400/30 text-cyan-300 
+                     hover:from-cyan-400/30 hover:to-blue-500/30 hover:border-cyan-400/50
+                     transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+        >
+          <span className="text-xl">🧭</span>
+          <span className="font-medium">Tutor</span>
+        </motion.button>
       </div>
 
       {/* Contenido principal */}
