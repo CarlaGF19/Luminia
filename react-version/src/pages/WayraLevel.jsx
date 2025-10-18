@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Volume2, VolumeX, Smartphone, RotateCcw, ArrowRight, Trophy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/wayra-ar-cards.css';
 
 const WayraLevel = () => {
   const navigate = useNavigate();
@@ -133,6 +134,7 @@ const WayraLevel = () => {
   const [activeTab, setActiveTab] = useState('ar-cards');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [currentCard, setCurrentCard] = useState(0);
+  const [showTutorialModal, setShowTutorialModal] = useState(false);
   const audioRef = useRef(null);
   
   // Quiz state management with intelligent relearning system and timer
@@ -622,124 +624,190 @@ const WayraLevel = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="space-y-6"
+                className="wayra-level card-ar-section space-y-6"
               >
+                {/* Encabezado */}
                 <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold mb-2" style={{ color: '#F6F8FF' }}>
-                    🌬️ Cartas del Viento
+                  <h2 className="text-3xl font-bold mb-4" style={{ color: '#F6F8FF', fontFamily: 'Poppins, sans-serif' }}>
+                    Carta del Viento: Sin Fantasmas de Energía
                   </h2>
-                  <p className="text-lg" style={{ color: '#C27CFF' }}>
-                    Descubre consejos prácticos con Realidad Aumentada
-                  </p>
+                  <div className="mb-6">
+                    <span 
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
+                      style={{
+                        background: 'rgba(169, 255, 159, 0.18)',
+                        color: '#A9FF9F',
+                        border: '1px solid rgba(169, 255, 159, 0.3)'
+                      }}
+                    >
+                      <span className="text-green-400">⭐</span>
+                      Desbloqueada
+                    </span>
+                  </div>
                 </div>
 
-                {/* Carta actual */}
+                {/* Bloque de instrucciones */}
                 <motion.div
-                  className="rounded-3xl p-8 border shadow-2xl max-w-2xl mx-auto"
+                  className="rounded-3xl p-6 border shadow-2xl max-w-3xl mx-auto mb-8"
                   style={{
                     background: 'rgba(255,255,255,0.08)',
-                    backdropFilter: 'blur(20px)',
+                    backdropFilter: 'blur(16px)',
                     borderColor: 'rgba(112, 212, 255, 0.3)',
                     boxShadow: '0 0 40px rgba(194, 124, 255, 0.2)'
                   }}
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: 1 }}
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#F6F8FF' }}>
-                      Carta del Viento: {arCards[currentCard].title}
-                    </h3>
+                  <div className="text-center space-y-4" style={{ color: '#F6F8FF', fontFamily: 'Nunito, sans-serif' }}>
+                    <div className="text-lg leading-relaxed">
+                      <p className="mb-4">
+                        <span className="text-2xl mr-2">💡</span>
+                        <strong>Cada tarjeta AR tiene dos caras:</strong>
+                      </p>
+                      <ul className="text-left space-y-2 max-w-2xl mx-auto" style={{ fontSize: '18px' }}>
+                        <li>• En la parte delantera, verás un reto del Apu con un código QR para escanear.</li>
+                        <li>• En la parte trasera, encontrarás una reflexión del Apu para pensar cómo cuidamos la energía.</li>
+                      </ul>
+                    </div>
                     
-                    {/* Placeholder para imagen */}
-                    <div 
-                      className="w-48 h-48 mx-auto rounded-2xl mb-6 flex items-center justify-center border"
-                      style={{
-                        background: 'linear-gradient(135deg, rgba(112, 212, 255, 0.1), rgba(194, 124, 255, 0.1))',
-                        borderColor: 'rgba(112, 212, 255, 0.2)'
-                      }}
-                    >
-                      <span className="text-5xl">🌬️</span>
+                    <div className="text-lg leading-relaxed">
+                      <p className="mb-4">
+                        <span className="text-2xl mr-2">📱</span>
+                        <strong>Al escanear el QR, LUMINA te guiará paso a paso:</strong>
+                      </p>
+                      <p className="text-left max-w-2xl mx-auto" style={{ fontSize: '18px' }}>
+                        primero pedirá activar la cámara trasera, y luego verás al Apu en 3D, con consejos animados y desafíos ecológicos. ✨
+                      </p>
                     </div>
-
-                    {/* Badge de estado */}
-                    <div className="mb-6">
-                      <span 
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
-                        style={{
-                          background: 'rgba(169, 255, 159, 0.18)',
-                          color: '#A9FF9F',
-                          border: '1px solid rgba(169, 255, 159, 0.3)'
-                        }}
-                      >
-                        <span className="text-green-400">⭐</span>
-                        Desbloqueada
-                      </span>
-                    </div>
-
-                    {/* Botones de acción */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <motion.button
-                        onClick={() => handleViewAR(arCards[currentCard].id)}
-                        className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white shadow-lg"
-                        style={{
-                          background: 'linear-gradient(135deg, #C27CFF 0%, #70D4FF 100%)',
-                          boxShadow: '0 0 20px rgba(194, 124, 255, 0.4)'
-                        }}
-                        whileHover={{ 
-                          scale: 1.05,
-                          boxShadow: '0 0 30px rgba(194, 124, 255, 0.6)'
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label={`Ver carta ${arCards[currentCard].title} en realidad aumentada`}
-                      >
-                        <span className="text-purple-300">👁️</span>
-                        Ver en AR
-                      </motion.button>
-
-                      <motion.button
-                        onClick={() => handleShowTip(arCards[currentCard].tip)}
-                        className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300"
-                        style={{
-                          background: 'rgba(255,255,255,0.1)',
-                          color: '#F6F8FF',
-                          border: '1px solid rgba(112, 212, 255, 0.3)'
-                        }}
-                        whileHover={{ 
-                          scale: 1.05,
-                          background: 'rgba(255,255,255,0.15)',
-                          boxShadow: '0 0 20px rgba(112, 212, 255, 0.3)'
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label={`Ver consejo para ${arCards[currentCard].title}`}
-                      >
-                        <span className="text-yellow-400">💡</span>
-                        Consejo
-                      </motion.button>
-
-                      {arCards.length > 1 && (
-                        <motion.button
-                          onClick={handleNextCard}
-                          className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300"
-                          style={{
-                            background: 'rgba(255,255,255,0.05)',
-                            color: '#C27CFF',
-                            border: '1px solid rgba(194, 124, 255, 0.3)'
-                          }}
-                          whileHover={{ 
-                            scale: 1.05,
-                            background: 'rgba(255,255,255,0.1)'
-                          }}
-                          whileTap={{ scale: 0.95 }}
-                          aria-label="Ver siguiente carta"
-                        >
-                          <ArrowRight size={20} />
-                          Siguiente carta
-                        </motion.button>
-                      )}
-                    </div>
+                    
+                    <p className="text-xl font-semibold mt-6" style={{ color: '#C27CFF' }}>
+                      ¡Explora, aprende y deja que el viento te hable! 🌬️💫
+                    </p>
                   </div>
                 </motion.div>
+
+                {/* Botones principales */}
+                <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
+                  <motion.button
+                    onClick={() => window.open('https://drive.google.com/file/d/15Wpr_5tlvHJxsxvWup9a67y5PImd96KF/view?usp=drivesdk', '_blank')}
+                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white shadow-lg"
+                    style={{
+                      background: 'linear-gradient(135deg, #C27CFF 0%, #70D4FF 100%)',
+                      boxShadow: '0 0 20px rgba(194, 124, 255, 0.4)',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontSize: '18px'
+                    }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: '0 0 30px rgba(194, 124, 255, 0.6)'
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Descarga la carta para imprimir y escanear su QR"
+                    title="Descarga la carta para imprimir y escanear su QR."
+                  >
+                    <span className="text-2xl">📘</span>
+                    Obtener PDF
+                  </motion.button>
+
+                  <motion.button
+                    onClick={() => setShowTutorialModal(true)}
+                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300"
+                    style={{
+                      background: 'rgba(255,255,255,0.1)',
+                      color: '#F6F8FF',
+                      border: '1px solid rgba(112, 212, 255, 0.3)',
+                      fontFamily: 'Poppins, sans-serif',
+                      fontSize: '18px'
+                    }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      background: 'rgba(255,255,255,0.15)',
+                      boxShadow: '0 0 20px rgba(112, 212, 255, 0.3)'
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Ver tutorial de cómo escanear tu Carta del Viento paso a paso"
+                  >
+                    <span className="text-2xl">🎥</span>
+                    Ver Tutorial
+                  </motion.button>
+                </div>
+
+                {/* Modal de Tutorial */}
+                <AnimatePresence>
+                  {showTutorialModal && (
+                    <motion.div
+                      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={() => setShowTutorialModal(false)}
+                    >
+                      <motion.div
+                        className="rounded-3xl p-8 border shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                        style={{
+                          background: 'rgba(11, 14, 29, 0.95)',
+                          backdropFilter: 'blur(20px)',
+                          borderColor: 'rgba(112, 212, 255, 0.3)',
+                          boxShadow: '0 0 40px rgba(194, 124, 255, 0.3)'
+                        }}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.8, opacity: 0 }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <div className="text-center mb-6">
+                          <h3 className="text-2xl font-bold mb-4" style={{ color: '#F6F8FF', fontFamily: 'Poppins, sans-serif' }}>
+                            Cómo escanear tu Carta del Viento paso a paso
+                          </h3>
+                        </div>
+                        
+                        <div className="space-y-4" style={{ color: '#F6F8FF', fontFamily: 'Nunito, sans-serif' }}>
+                          <div className="flex items-start gap-4 p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                            <span className="text-2xl">1️⃣</span>
+                            <p className="text-lg">Abre tu cámara o entra a LUMINA.</p>
+                          </div>
+                          
+                          <div className="flex items-start gap-4 p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                            <span className="text-2xl">2️⃣</span>
+                            <p className="text-lg">Escanea el código QR.</p>
+                          </div>
+                          
+                          <div className="flex items-start gap-4 p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                            <span className="text-2xl">3️⃣</span>
+                            <p className="text-lg">Permite acceso a la cámara trasera.</p>
+                          </div>
+                          
+                          <div className="flex items-start gap-4 p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                            <span className="text-2xl">4️⃣</span>
+                            <p className="text-lg">Observa cómo el Apu cobra vida en 3D.</p>
+                          </div>
+                          
+                          <div className="flex items-start gap-4 p-4 rounded-xl" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                            <span className="text-2xl">5️⃣</span>
+                            <p className="text-lg">Descubre su reto y reflexión ecológica. 🌱💫</p>
+                          </div>
+                        </div>
+                        
+                        <div className="text-center mt-8">
+                          <motion.button
+                            onClick={() => setShowTutorialModal(false)}
+                            className="px-6 py-3 rounded-xl font-semibold"
+                            style={{
+                              background: 'linear-gradient(135deg, #C27CFF 0%, #70D4FF 100%)',
+                              color: 'white',
+                              fontFamily: 'Poppins, sans-serif'
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            Entendido
+                          </motion.button>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 {/* Indicador de cartas */}
                 {arCards.length > 1 && (
