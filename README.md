@@ -13,7 +13,7 @@
 Hackathon Niñas con Energía 2025
 Organizado por Epic Queen y Siemens Energía 🇩🇪
 
-👩‍🏫 Equipo
+👩‍🏫 Equipo:
 
 **Asesora educativa**:Carla Acha Inga
 
