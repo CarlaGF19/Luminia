@@ -4,6 +4,13 @@
 Hackathon Niñas con Energía 2025
 Organizado por Epic Queen y Siemens Energía 🇩🇪
 
+👩‍🏫 Equipo
+Asesora educativa:Carla Acha Inga
+Estudiantes desarrolladoras:
+- Isabella Maguiña
+- Estefanía Salazar
+- Katie Huamán
+
 🧠 Descripción del proyecto
 
 LUMINA: Apus de la Energía es un videojuego educativo que enseña a niñas y niños el uso responsable de la energía a través de la gamificación y la cultura andina.
@@ -22,24 +29,17 @@ Cada Apu representa una energía y una enseñanza:
 
 “Cada acción, por pequeña que parezca, puede encender la luz del mundo.” 💡
 
-👩‍🏫 Equipo
-Asesora educativa:Carla Acha Inga
-Estudiantes desarrolladoras:
-- Isabella Maguiña
-- Estefanía Salazar
-- Katie Huamán
-
-Categoría: Nivel 1 (9-13 años)
-Año: 2025
-Premio: 🥇 Primer Lugar Internacional
-Representando: Perú 🇵🇪
-
 🎮 Plataforma de desarrollo
-🟠 TRAE
-Complemento de desarrollo visual y lógico para prototipar secuencias educativas y animaciones dentro del entorno.
-Utilizado junto con VibeCoding para integrar componentes interactivos y transiciones entre escenas.
-💗 Lovable
-Herramienta de desarrollo asistido por IA, usada para refinar pantallas, flujo educativo e interactividad.
-Facilitó la conexión entre la narrativa del juego y la experiencia de usuario.
 
+🟣 VibeCoding
+- Plataforma educativa visual basada en JavaScript, usada para construir las escenas, la lógica y los niveles del videojuego.
+Permite programar mediante bloques y también con código editable, integrando variables, bucles, condiciones y eventos.
+
+🟠 TRAE
+- Complemento de desarrollo visual y lógico para prototipar secuencias educativas y animaciones dentro del entorno.
+Utilizado junto con VibeCoding para integrar componentes interactivos y transiciones entre escenas.
+
+💗 Lovable
+- Herramienta de desarrollo asistido por IA, usada para refinar pantallas, flujo educativo e interactividad.
+Facilitó la conexión entre la narrativa del juego y la experiencia de usuario.
 
