@@ -3,7 +3,7 @@
 ![8thWall](https://img.shields.io/badge/8th%20Wall-Augmented%20Reality-lightgrey)
 ![Tendenc3D](https://img.shields.io/badge/Tendenc-3D%20Modeling-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![SiemensEnergy](https://img.shields.io/badge/Siemens%20Energy-Sponsor-purple) 🇩🇪
+![SiemensEnergy](https://img.shields.io/badge/Siemens%20Energy-Sponsor-purple)
 ![EpicQueen](https://img.shields.io/badge/Epic%20Queen-Hackathon-purple) 💜
 
 
