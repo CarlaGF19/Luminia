@@ -23,20 +23,23 @@ Cada Apu representa una energía y una enseñanza:
 “Cada acción, por pequeña que parezca, puede encender la luz del mundo.” 💡
 
 👩‍🏫 Equipo
-
-Asesora educativa:
-
-Carla Acha Inga
-
+Asesora educativa:Carla Acha Inga
 Estudiantes desarrolladoras:
-
-Isabella Maguiña
-
-Estefanía Salazar
-
-Katie Huamán
+- Isabella Maguiña
+- Estefanía Salazar
+- Katie Huamán
 
 Categoría: Nivel 1 (9-13 años)
 Año: 2025
 Premio: 🥇 Primer Lugar Internacional
 Representando: Perú 🇵🇪
+
+🎮 Plataforma de desarrollo
+🟠 TRAE
+Complemento de desarrollo visual y lógico para prototipar secuencias educativas y animaciones dentro del entorno.
+Utilizado junto con VibeCoding para integrar componentes interactivos y transiciones entre escenas.
+💗 Lovable
+Herramienta de desarrollo asistido por IA, usada para refinar pantallas, flujo educativo e interactividad.
+Facilitó la conexión entre la narrativa del juego y la experiencia de usuario.
+
+
