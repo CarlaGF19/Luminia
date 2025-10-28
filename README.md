@@ -1,5 +1,3 @@
-🏆 LUMINA: Apus de la Energía
-
 ![VibeCoding](https://img.shields.io/badge/VibeCoding-Platform-blueviolet)
 ![TRAE](https://img.shields.io/badge/TRAE-Visual%20Logic-orange)
 ![Lovable](https://img.shields.io/badge/Lovable-AI%20Assistant-pink)
@@ -7,10 +5,11 @@
 ![8thWall](https://img.shields.io/badge/8th%20Wall-Augmented%20Reality-lightgrey)
 ![Tendenc3D](https://img.shields.io/badge/Tendenc-3D%20Modeling-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![SiemensEnergy](https://img.shields.io/badge/Siemens%20Energy🇩🇪-Sponsor-purple)
-![EpicQueen](https://img.shields.io/badge/EpicQueen-Hackathon💜-purple)
+![SiemensEnergy](https://img.shields.io/badge/Siemens%20Energy-Sponsor-purple) 🇩🇪
+![EpicQueen](https://img.shields.io/badge/Epic%20Queen-Hackathon-purple) 💜
 
 
+🏆 LUMINA: Apus de la Energía
 
 🥇 Primer Lugar Internacional – Categoría Nivel 1 (9-13 años)
 Hackathon Niñas con Energía 2025
@@ -42,11 +41,18 @@ Cada Apu representa una energía y una enseñanza:
 “Cada acción, por pequeña que parezca, puede encender la luz del mundo.” 💡
 
 
-🎮 Plataforma de desarrollo
-🟠 TRAE
-- Complemento de desarrollo visual y lógico para prototipar secuencias educativas y animaciones dentro del entorno.
-Utilizado junto con VibeCoding para integrar componentes interactivos y transiciones entre escenas.
+**🟣 VibeCoding (con módulos TRAE y Lovable)**  
+Entorno educativo visual basado en **JavaScript**, donde se construyeron las escenas, la lógica y los niveles del videojuego.  
+- **🟠 TRAE**: módulo de desarrollo visual y lógico usado para prototipar secuencias y animaciones.  
+- **💗 Lovable**: módulo asistido por IA para refinar pantallas, diálogos y flujo educativo.  
+VibeCoding permite programar mediante bloques o código editable, integrando variables, bucles, condiciones y eventos.
 
-💗 Lovable
-- Herramienta de desarrollo asistido por IA, usada para refinar pantallas, flujo educativo e interactividad.
-Facilitó la conexión entre la narrativa del juego y la experiencia de usuario.
+
+## 💜 Agradecimientos  
+
+Gracias al programa **Hackathon Niñas con Energía 2025** de **Epic Queen** y **Siemens Energía** 🇩🇪  
+por motivar a más niñas a crear tecnología con propósito.  
+A nuestras mentoras y juradas por su guía y apoyo constante.  
+
+> LUMINA demuestra que cuando la ciencia, la energía y la creatividad se unen, el futuro brilla con más fuerza. ⚡
+
