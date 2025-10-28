@@ -1,6 +1,4 @@
-![VibeCoding](https://img.shields.io/badge/VibeCoding-Platform-blueviolet)
-![TRAE](https://img.shields.io/badge/TRAE-Visual%20Logic-orange)
-![Lovable](https://img.shields.io/badge/Lovable-AI%20Assistant-pink)
+![VibeCoding+TRAE+Lovable](https://img.shields.io/badge/VibeCoding%20%2B%20TRAE%20%2B%20Lovable-Game%20Builder-purple)
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-AI%20Prompts-green)
 ![8thWall](https://img.shields.io/badge/8th%20Wall-Augmented%20Reality-lightgrey)
 ![Tendenc3D](https://img.shields.io/badge/Tendenc-3D%20Modeling-blue)
