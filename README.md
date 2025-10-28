@@ -1,4 +1,4 @@
-![TRAE+Lovable](https://img.shields.io/badge/VibeCoding%20%2B%20TRAE%20%2B%20Lovable-Game%20Builder-purple)
+![TRAE+Lovable|VibeCoding](https://img.shields.io/badge/TRAE%20%2B%20Lovable%20%7C%20VibeCoding-Game%20Builder-purple)
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-AI%20Prompts-green)
 ![8thWall](https://img.shields.io/badge/8th%20Wall-Augmented%20Reality-lightgrey)
 ![Tendenc3D](https://img.shields.io/badge/Tendenc-3D%20Modeling-blue)
