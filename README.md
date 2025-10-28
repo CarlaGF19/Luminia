@@ -1,5 +1,17 @@
 🏆 LUMINA: Apus de la Energía
 
+![VibeCoding](https://img.shields.io/badge/VibeCoding-Platform-blueviolet)
+![TRAE](https://img.shields.io/badge/TRAE-Visual%20Logic-orange)
+![Lovable](https://img.shields.io/badge/Lovable-AI%20Assistant-pink)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-AI%20Prompts-green)
+![8thWall](https://img.shields.io/badge/8th%20Wall-Augmented%20Reality-lightgrey)
+![Tendenc3D](https://img.shields.io/badge/Tendenc-3D%20Modeling-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![SiemensEnergy](https://img.shields.io/badge/Siemens%20Energy🇩🇪-Sponsor-purple)
+![EpicQueen](https://img.shields.io/badge/EpicQueen-Hackathon💜-purple)
+
+
+
 🥇 Primer Lugar Internacional – Categoría Nivel 1 (9-13 años)
 Hackathon Niñas con Energía 2025
 Organizado por Epic Queen y Siemens Energía 🇩🇪
